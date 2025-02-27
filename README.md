@@ -18,15 +18,10 @@ As I seek opportunities in **data analytics, financial analysis, and business in
 🔹 Geographical distribution of listeners  
 🔹 Insights into top-performing tracks  
 
-### 📂 More Projects Coming Soon!  
-The portfolio will be continuously updated with new projects, including:  
-📈 **Financial & Business Performance Dashboards**  
-💲 **Sales & Marketing Analytics**  
-📊 **Customer Behavior & Retention Analysis**  
 
 ---
 
-## 🛠 Tools & Skills  
+## 📈 Tools & Skills  
 🔹 **Power BI** (Data Modeling, DAX, Power Query)  
 🔹 **SQL** (Data Extraction, Transformation)  
 🔹 **Excel** (Data Cleaning, Pivot Tables)  
