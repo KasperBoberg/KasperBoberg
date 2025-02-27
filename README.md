@@ -11,7 +11,7 @@ As I seek opportunities in **data analytics, financial analysis, and business in
 
 ## 📌 Featured Projects  
 
-### 1️⃣ [Streaming & Earnings Dashboard](./Streaming-Dashboard/README.md) *(In Progress)*  
+### 1️⃣ [Streaming & Earnings Dashboard](./Power-BI-Portfolio/Streaming-Dashboard/README.md) *(In Progress)*  
 **Objective:** Analyzing real-world music streaming and revenue data from a personal side project.  
 🔹 Breakdown of streams by platform  
 🔹 Revenue trends over time  
