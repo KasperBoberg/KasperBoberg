@@ -1,6 +1,6 @@
 # Kasper Boberg – Power BI Portfolio
 
-Hej! Jag heter Kasper och bygger BI-lösningar med fokus på ekonomi och affärsnytta. Här visas ett konkret case där jag analyserat musikstreaming och intäkter med Power BI.
+Hej! Jag heter Kasper och det här är min portfolio för BI-lösningar med fokus på ekonomi och affärsnytta. Här visas ett konkret case där jag analyserat musikstreaming och intäkter med Power BI.
 
 ---
 
