@@ -20,13 +20,13 @@ Syftet är att förstå hur intäkter per stream (eCPM) varierar mellan olika pl
 
 ### Nyckelmått (DAX)
 ```DAX
-Total Streams := SUM(FactStreams[streams])
-Total Revenue := SUM(FactPayouts[amount_local_converted])
-eCPM := DIVIDE([Total Revenue], [Total Streams]) * 1000
-Revenue R12 := CALCULATE([Total Revenue], DATESINPERIOD(DimDate[Date], MAX(DimDate[Date]), -12, MONTH))
+Total Streams = SUM('Streaming Data'[Quantity])
+Total Revenue = SUM('Streaming Data'[Earnings (USD)])
+Revenue per 1000 Streams = DIVIDE([Total Revenue], [Total Streams]) * 1000
 ```
 
-```DAX - Med kontinuerlig datumkolumn
+###  Nyckemått med kontinuerlig datumkolumn (DAX)
+```DAX
 YoY Revenue Growth = 
 VAR CurrentYear = [Total Revenue]
 VAR PreviousYear = CALCULATE([Total Revenue], SAMEPERIODLASTYEAR('Date Table'[Date]))
