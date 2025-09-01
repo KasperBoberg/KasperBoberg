@@ -40,12 +40,6 @@ Revenue R12 := CALCULATE([Total Revenue], DATESINPERIOD(DimDate[Date], MAX(DimDa
 - R12-trenden visar både säsongsvariationer och effekten av nya releaser
 - Intäkterna är tydligt koncentrerade till få plattformar
 
-### Reflektion & Nästa steg
-Detta projekt är endast en start. Nästa utvecklingssteg skulle kunna bli:
-- Cohort-analys per release
-- Analyser av churn och outlier-trender i streamingmönster
-- Prognosmodell för framtida intäkter baserat på historiska trender
-
 ---
 
 ## Teknik
@@ -56,4 +50,4 @@ Detta projekt är endast en start. Nästa utvecklingssteg skulle kunna bli:
 ## Kontakt
 kasperboberg95@gmail.com
 
-> **Notering:** Av sekretess- och licensskäl delas varken datakällor eller .pbix-filer. Istället visas datamodell, DAX-kod och skärmdumpar från rapporten.
+> **Notering:** Eftersom datan i sin originalform är hämtad från privata källor innan anonymisering delar jag helst ut varken datakällor eller .pbix-filer. Istället visas datamodell, DAX-kod och skärmdumpar från rapporten.
