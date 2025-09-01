@@ -23,6 +23,7 @@ Total Streams := SUM(FactStreams[streams])
 Total Revenue := SUM(FactPayouts[amount_local_converted])
 eCPM := DIVIDE([Total Revenue], [Total Streams]) * 1000
 Revenue R12 := CALCULATE([Total Revenue], DATESINPERIOD(DimDate[Date], MAX(DimDate[Date]), -12, MONTH))
+```
 
 ### Resultat (Dashboard)
 - **Översikt:** Total streams, total revenue, eCPM (för 1 000 streams)
