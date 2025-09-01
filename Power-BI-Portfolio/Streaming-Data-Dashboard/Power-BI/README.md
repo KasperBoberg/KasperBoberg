@@ -46,7 +46,7 @@ Streams Required for $1000 = DIVIDE(1000, [Average Revenue per Stream])
 YoY Revenue Growth = 
 VAR CurrentYear = [Total Revenue]
 VAR PreviousYear = CALCULATE([Total Revenue], SAMEPERIODLASTYEAR('Date Table'[Date]))
-RETURN DIVIDE(CurrentYear - PreviousYear, PreviousYear)
+RETURN IF(NOT(ISBLANK(PreviousYear)), DIVIDE(CurrentYear - PreviousYear, PreviousYear), BLANK())
 ```
 
 ## Dashboards
