@@ -1,27 +1,21 @@
-# 🎵 Streaming & Earnings Dashboard  
+# Streaming & Earnings — Power BI
 
-This **Power BI** dashboard analyzes real-world music streaming and revenue data from a personal side project. The data comes from **DistroKid** reports, covering streams and earnings across platforms. While the data is accurate, some figures may be hidden for anonymity.  
+**Varför:** Få helhetsbild av streams och intäkter per plattform/territorium och identifiera vad som driver eCPM och intäkt/stream.
 
-## 📌 Overview  
-**Objective:** Gain insights into streaming performance and earnings to optimize revenue.  
-✔ Top-performing tracks & platforms  
-✔ Revenue trends over time  
-✔ Listener demographics & geographical insights  
+## Data
+- Källa: export/sammanställning från DistroKid (anonymiserad).
+- Granularitet: dag/land/plattform/track.
+- Samplefiler: `data/sample_streams.csv`, `data/sample_payouts.csv`.
 
-## 🛠 Tools & Technologies  
-- **Power BI** (Data Modeling, DAX, Power Query)  
-- **Excel & CSV** (Data Extraction, Cleaning)  
-- **DistroKid Reports** (Streaming & Revenue Data)  
+## Modell
+- Stjärnschema: `FactStreams`, `FactPayouts` + dimensioner `DimDate`, `DimPlatform`, `DimTerritory`, `DimTrack`.
+- Valutaomräkning med daglig kurs (exempelserie).
 
-## 📊 Dashboard Features  
-🎧 **Streaming Analytics** – Streams by platform, trends, engagement  
-💰 **Revenue Insights** – Earnings breakdown, geographic distribution  
-🔎 **Top Tracks** – Most streamed and highest-earning songs  
-
-## 🚀 Next Steps  
-✅ Finalize KPIs & interactive drill-through  
-✅ Implement forecasting & trend analysis  
-
-## 📢 Connect  
-📧 kasperboberg95@gmail.com  
-📂 [Power BI Portfolio](https://github.com/KasperBoberg/power-bi-portfolio)  
+## Nyckel-DAX (urval)
+```DAX
+Total Streams := SUM(FactStreams[streams])
+Total Revenue := SUM(FactPayouts[amount_local_converted])
+eCPM := DIVIDE([Total Revenue], [Total Streams]) * 1000
+Top Platform Share := 
+ VAR TopPlat = CALCULATE([Total Streams], TOPN(1, DimPlatform, [Total Streams], DESC))
+ RETURN DIVIDE(TopPlat, [Total Streams])
