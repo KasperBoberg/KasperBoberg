@@ -15,7 +15,7 @@ Syftet var att förstå hur intäkter per stream (eCPM) varierar mellan olika pl
 - **Bearbetning:** Power Query (datasanering, valutaomräkning, typning)
 - **Modellering:** Stjärnschema för tydlig struktur och analys
 
-![Data Management via SQL](Power-BI-Portfolio/Streaming-Data-Dashboard/Database/img_readme.md)
+### Se databasbygget och hanteringen i SQL (.md): (Power-BI-Portfolio/Streaming-Data-Dashboard/Database/img_readme.md)
 
 ### Nyckelmått (DAX)
 ```DAX
@@ -31,7 +31,7 @@ Revenue R12 := CALCULATE([Total Revenue], DATESINPERIOD(DimDate[Date], MAX(DimDa
 - **Territorievy:** Intäkter och eCPM per land
 - **Trend:** Rullande 12 månader för både intäkter och streams
 
-📊 Se dashboard-bilder (PDF): [Power-BI-Portfolio/Streaming-Data-Dashboard/Power-BI/Streaming_Data_Project.pdf]
+### Se dashboard-bilder (PDF): (Power-BI-Portfolio/Streaming-Data-Dashboard/Power-BI/Streaming_Data_Project.pdf)
 
 ### Insikter
 - eCPM varierar markant mellan plattformar och territorier
