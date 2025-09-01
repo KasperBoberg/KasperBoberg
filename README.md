@@ -1,13 +1,13 @@
 # Kasper Boberg – Power BI Portfolio
 
-Hej! Jag heter Kasper och det här är min portfolio för BI-lösningar med fokus på ekonomi och affärsnytta. Här visas ett konkret case där jag analyserat musikstreaming och intäkter med Power BI.
+Hej! Jag heter Kasper och det här är min portfolio för BI-lösningar med fokus på ekonomi och affärsnytta. Här visas ett konkret case där jag analyserat musikstreaming och intäkter med Power BI. 
 
 ---
 
 ## Projekt: Streaming & Earnings Dashboard (Power BI)
 
 ### Bakgrund
-Syftet var att förstå hur intäkter per stream (eCPM) varierar mellan olika plattformar och territorier över tid. Med hjälp av anonymiserade exportdata från musikdistribution byggdes en informativ Power BI-rapport.
+Syftet var att förstå hur intäkter per stream (eCPM) varierar mellan olika plattformar och territorier över tid. Med hjälp av anonymiserade exportdata från musikdistribution byggdes en informativ Power BI-rapport. All data har anonymiserats på ett sätt som säkerställer att alla plattformsrelaterade insikter, baserade på jämförande och generaliserande analyser, förblir korrekta, medan den artistspecifika informationen presenteras i en mer anonymiserad form. 
 
 ### Data & Modell
 - **Faktatabeller:** `Streams`, `Payouts`
