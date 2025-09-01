@@ -15,7 +15,7 @@ Syftet var att förstå hur intäkter per stream (eCPM) varierar mellan olika pl
 - **Bearbetning:** Power Query (datasanering, valutaomräkning, typning)
 - **Modellering:** Stjärnschema för tydlig struktur och analys
 
-![Datamodell](Database/img_readme.md)
+![Datamodell](Power-BI-Portfolio/Streaming-Data-Dashboard/Database/img_readme.md)
 
 ### Nyckelmått (DAX)
 ```DAX
