@@ -31,7 +31,7 @@ Revenue R12 := CALCULATE([Total Revenue], DATESINPERIOD(DimDate[Date], MAX(DimDa
 - **Territorievy:** Intäkter och eCPM per land
 - **Trend:** Rullande 12 månader för både intäkter och streams
 
-📊 Se dashboard-bilder (PDF): [Power-BI/Streaming-Data-Project.pdf]
+📊 Se dashboard-bilder (PDF): [Power-BI-Portfolio/Streaming-Data-Dashboard/Power-BI/Streaming_Data_Project.pdf]
 
 ### Insikter
 - eCPM varierar markant mellan plattformar och territorier
