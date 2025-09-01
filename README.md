@@ -1,36 +1,19 @@
-# 📊 Power BI Portfolio  
+# Kasper Boberg — Power BI & Analytics
 
-Welcome to my **Power BI Portfolio**, where I showcase my skills in **data analytics, visualization, and business intelligence**. This repository highlights my ability to transform raw data into actionable insights using **Power BI**.  
+Jag bygger tydliga BI-lösningar med fokus på controlling/ekonomi. Här finns små, öppna projekt som visar hur jag:
+- modellerar data (stjärnschema, Power Query)
+- skriver DAX-mått som går att underhålla
+- presenterar insikter som påverkar beslut
 
-As I seek opportunities in **data analytics, financial analysis, and business intelligence**, this portfolio demonstrates my expertise in:  
-✔ **Data Analysis & Visualization** – Turning complex datasets into meaningful insights.  
-✔ **Power BI Proficiency** – Data modeling, DAX calculations, and interactive reporting.  
-✔ **Business Impact** – Driving data-driven decision-making through storytelling.  
+## Projekt
+- **Streaming & Earnings (Power BI)** — intäkter per plattform/land, eCPM per 1 000 streams, valutaomräkning. [Repo → länka hit]
+- **Finance KPI Dashboard (Power BI)** — resultat/likviditet, budget vs utfall, rullande 12 månader. [Repo → länka]
+- **SQL Cohort Analysis** — retention/cohort-logik med rena SQL-frågor. [Repo → länka]
 
----
+## Teknik
+Power BI (Model, DAX, Power Query) · SQL · Excel
 
-## 📌 Featured Projects  
+## Kontakt
+kasperboberg95@gmail.com
 
-### 1️⃣ [Streaming & Earnings Dashboard](./Power-BI-Portfolio/Streaming-Data-Dashboard/README.md) *(In Progress)*  
-**Objective:** Analyzing real-world music streaming and revenue data from a personal side project.  
-🔹 Breakdown of streams by platform  
-🔹 Revenue trends over time  
-🔹 Geographical distribution of listeners  
-🔹 Insights into top-performing tracks  
-
-
----
-
-## 📈 Tools & Skills  
-🔹 **Power BI** (Data Modeling, DAX, Power Query)  
-🔹 **SQL** (Data Extraction, Transformation)  
-🔹 **Excel** (Data Cleaning, Pivot Tables)  
-🔹 **Data Visualization & Storytelling**  
-
----
-
-## 📢 Connect with Me  
-📧 Email: kasperboberg95@gmail.com    
-📂 Link to Portfolio: [Portfolio Repository](https://github.com/KasperBoberg/power-bi-portfolio)  
-
-Feel free to explore the projects and reach out!  
+> All data i publika repos är anonymiserad. .pbit-mallar + sample-data ingår för enkel testning.
