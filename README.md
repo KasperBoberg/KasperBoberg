@@ -26,6 +26,13 @@ eCPM := DIVIDE([Total Revenue], [Total Streams]) * 1000
 Revenue R12 := CALCULATE([Total Revenue], DATESINPERIOD(DimDate[Date], MAX(DimDate[Date]), -12, MONTH))
 ```
 
+```DAX - Med kontinuerlig datumkolumn
+YoY Revenue Growth = 
+VAR CurrentYear = [Total Revenue]
+VAR PreviousYear = CALCULATE([Total Revenue], SAMEPERIODLASTYEAR('Date Table'[Date]))
+RETURN IF(NOT(ISBLANK(PreviousYear)), DIVIDE(CurrentYear - PreviousYear, PreviousYear), BLANK())
+```
+
 ### Resultat (Dashboard)
 - **Översikt:** Total streams, total revenue, eCPM (för 1 000 streams)
 - **Plattformsvy:** Top-N plattformar och deras andel av totalt
