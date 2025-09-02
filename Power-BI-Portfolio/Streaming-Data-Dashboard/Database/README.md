@@ -16,13 +16,15 @@ Exempel på transformationer som gjorts i SQL:
 **1. Rensa null-värden och dubletter**  
 ```sql
 DELETE FROM streaming_data
-WHERE track_name IS NULL
-   OR platform IS NULL;
-
-DELETE FROM streaming_data a
-USING streaming_data b
-WHERE a.ctid < b.ctid
-  AND a.stream_id = b.stream_id;
+WHERE ctid IN (
+    SELECT ctid
+    FROM (
+        SELECT ctid,
+               ROW_NUMBER() OVER (PARTITION BY stream_id ORDER BY ctid) as rn
+        FROM streaming_data
+    ) ranked
+    WHERE rn > 1
+);
 ```
 
 **2. Byta kolumnnamn till mer beskrivande**
