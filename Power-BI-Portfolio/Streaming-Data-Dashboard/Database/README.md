@@ -1,35 +1,93 @@
-# Music Streaming Analytics - PostgreSQL & Power BI Portfolio Project
+# Projekt: Databas för Streaming & Earnings Dashboard (PostgreSQL)
 
-## Project Overview
-This project demonstrates a data analytics pipeline using PostgreSQL and Power BI to analyze music streaming data, showcasing database design, SQL optimization, and data visualization skills.
+### Bakgrund
+För att möjliggöra analysen av musikstreaming och intäkter har en databas byggts i **PostgreSQL** och hostats på Supabase. Syftet är att samla, tvätta och optimera rådata från distributionsplattformen DistroKid (export i TSV-format) i en enda **platt tabell**. Tabellen fungerar som källan till Power BI och är strukturerad för att vara både enkel att förstå och snabb att analysera.  
 
-## Technical Implementation
+### Data & Modell
+- **Plattform:** PostgreSQL (Supabase)  
+- **Källor:** DistroKid-exporter (TSV)  
+- **Struktur:** En platt tabell med sammanslagen data för streams, intäkter, plattform, territorium, track och datum  
+- **Optimering:** Indexering på nyckelkolumner (datum, plattform, territorium) för effektivare frågekörning  
+- **Integration:** Direktanslutning till Power BI via DirectQuery  
 
-### Database Architecture
-- **Platform**: PostgreSQL database hosted on Supabase
-- **Data Source**: DistroKid music streaming data (TSV format)
-- **Optimization**: Strategic indexing on frequently queried columns for performance
+### Queries & Datatvätt
+Exempel på transformationer som gjorts i SQL:  
 
-### Power BI Integration
-- Direct connection to PostgreSQL database
-- Interactive dashboard with filtering capabilities
-- Key performance metrics and trend analysis
+**1. Rensa null-värden och dubletter**  
+```sql
+DELETE FROM streaming_data
+WHERE track_name IS NULL
+   OR platform IS NULL;
 
-## Business Intelligence Insights
-The dashboard provides actionable insights for music distribution:
-- Platform performance comparison
-- Streaming and revenue trends
-- Geographic distribution analysis
-- Revenue forecasting
+DELETE FROM streaming_data a
+USING streaming_data b
+WHERE a.ctid < b.ctid
+  AND a.stream_id = b.stream_id;
+```
 
-## Skills Demonstrated
-- **Database**: PostgreSQL, data modeling, SQL optimization, indexing
-- **Data Engineering**: Data import/transformation, cloud database configuration
-- **Business Intelligence**: Power BI dashboard development, metrics creation
-- **Data Analysis**: Trend identification, performance analytics
+**2. Byta kolumnnamn till mer beskrivande**
+```sql
+ALTER TABLE streaming_data
+RENAME COLUMN "Earnings (USD)" TO revenue_usd;
 
-## Development Process
-1. Database schema design and optimization
-2. Data import and validation
-3. Power BI data model and visualization development
-4. Documentation and deployment
+ALTER TABLE streaming_data
+RENAME COLUMN "Quantity" TO streams;
+```
+
+**3. Korrigera datatyper**
+```sql
+ALTER TABLE streaming_data
+ALTER COLUMN revenue_usd TYPE NUMERIC USING revenue_usd::NUMERIC;
+
+ALTER TABLE streaming_data
+ALTER COLUMN stream_date TYPE DATE USING stream_date::DATE;
+```
+
+**4. Skapa kategorier för enklare analys**
+```sql
+ALTER TABLE streaming_data
+ADD COLUMN platform_group TEXT;
+
+UPDATE streaming_data
+SET platform_group = CASE
+    WHEN platform IN ('Spotify', 'Apple Music') THEN 'Major'
+    ELSE 'Other'
+END;
+```
+
+### Process
+1. **Export från DistroKid** i TSV-format  
+2. **Uppladdning till Supabase** med importverktyg  
+3. **SQL-frågor för datatvätt och modellering**  
+   - Cleaning (nulls, dubletter, irrelevanta kolumner)  
+   - Renaming av kolumner  
+   - Datatypkonvertering (streams, revenue, datum)  
+   - Skapande av kategorikolumner  
+   - Indexering för bättre prestanda  
+4. **Direktkoppling till Power BI**  
+   - DirectQuery-anslutning mot databasen  
+   - Byggande av dashboard på den platta tabellen  
+
+### Resultat (Databas)
+- **Stabil och enkel datakälla** för Power BI-rapporten  
+- **Förbättrad prestanda** genom indexering  
+- **Flexibel struktur** där SQL queries kan utökas vid behov  
+
+### Insikter
+- En välstrukturerad platt tabell räcker långt för analys av streamingdata  
+- SQL-tvätt och standardisering gör att datan blir mer användbar och tillförlitlig  
+- Processen skapar en tydlig pipeline från rådata → databas → Power BI  
+
+---
+
+## Teknik
+**PostgreSQL** (datamodellering, SQL, indexering) · **Supabase** (molndatabas) · **Power BI**  
+
+---
+
+## Kontakt
+kasperboberg95@gmail.com  
+
+> **Notering:** Eftersom datan i sin originalform är hämtad från privata källor innan anonymisering delas varken datakällor eller råa SQL-dumpfiler. Istället visas utdrag, dokumentation och dashboards.
+
+
