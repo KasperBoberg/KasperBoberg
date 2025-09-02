@@ -40,7 +40,7 @@ RETURN IF(NOT(ISBLANK(PreviousYear)), DIVIDE(CurrentYear - PreviousYear, Previou
 - **Trend:** Rullande 12 månader för både intäkter och streams
 
 ### Se dashboard-bilder (PDF): 
-[Dashboard](Power-BI-Portfolio/Streaming-Data-Dashboard/Power-BI/Streaming_Data_Project.pdf)
+[Dashboard](Power-BI-Portfolio/Streaming-Data-Dashboard/Power-BI/Streaming_Data_Dashboards.pdf)
 
 ### Insikter
 - eCPM varierar markant mellan plattformar och territorier
