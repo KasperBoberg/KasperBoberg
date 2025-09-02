@@ -1,6 +1,6 @@
 # Kasper Boberg – Power BI Portfolio
 
-Hej! Jag heter Kasper och det här är min portfolio för BI-lösningar med fokus på ekonomi och affärsnytta. Här visas ett konkret case där jag analyserat musikstreaming och intäkter med Power BI. 
+Hej! Tack för att du vill titta igenom min portfolio för BI-lösningar med fokus på ekonomi och affärsnytta. Just nu finns ett konkret case där jag analyserat musikstreaming och intäkter med Power BI. Caset nyttjar även self-hosting via Supabase och SQL querying för att lagra, bearbeta och hämta data.
 
 ---
 
@@ -10,13 +10,13 @@ Hej! Jag heter Kasper och det här är min portfolio för BI-lösningar med foku
 Syftet är att förstå hur intäkter per stream (eCPM) varierar mellan olika plattformar och territorier över tid. Med hjälp av anonymiserade exportdata från musikdistributiontjänsten DistroKid har en informativ Power BI-rapport skapats. All data har anonymiserats på ett sätt som säkerställer att alla plattformsrelaterade insikter, baserade på jämförande och generaliserande analyser, förblir korrekta, medan den artistspecifika informationen presenteras i en mer anonymiserad form. 
 
 ### Data & Modell
-- **Faktatabeller:** `Streams`, `Payouts`
-- **Dimensioner:** `Date`, `Platform`, `Territory`, `Track`
-- **Bearbetning:** Power Query (datasanering, valutaomräkning, typning)
+- **Datakälla:** Streamingdata från privat musikprojekt via DistroKid
+- **Bearbetning:** PostgreSQL, Power Query (datasanering, valutaomräkning, typning)
 - **Modellering:** Stjärnschema för tydlig struktur och analys
 
-### Se databasbygget och hanteringen i SQL (.md): 
-[Database](Power-BI-Portfolio/Streaming-Data-Dashboard/Database/img_readme.md)
+### Se databasbygget och hanteringen i SQL (.md):
+[Databas README](Power-BI-Portfolio/Streaming-Data-Dashboard/Database/README.md)
+[Databas Bilder](Power-BI-Portfolio/Streaming-Data-Dashboard/Database/img_readme.md)
 
 ### Nyckelmått (DAX)
 ```DAX
@@ -35,7 +35,7 @@ RETURN IF(NOT(ISBLANK(PreviousYear)), DIVIDE(CurrentYear - PreviousYear, Previou
 
 ### Resultat (Dashboard)
 - **Översikt:** Total streams, total revenue, eCPM (för 1 000 streams)
-- **Plattformsvy:** Top-N plattformar och deras andel av totalt
+- **Plattformsvy:** Top-N plattformar, deras andel av totalt samt eCPM
 - **Territorievy:** Intäkter och eCPM per land
 - **Trend:** Rullande 12 månader för både intäkter och streams
 
