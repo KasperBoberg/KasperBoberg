@@ -49,7 +49,7 @@ ADD COLUMN platform_group TEXT;
 
 UPDATE streaming_data
 SET platform_group = CASE
-    WHEN platform IN ('Spotify', 'Apple Music') THEN 'Major'
+    WHEN platform IN ('Spotify', 'Apple Music', 'YouTube Red') THEN 'Major'
     ELSE 'Other'
 END;
 ```
@@ -75,7 +75,11 @@ END;
 ### Insikter
 - En välstrukturerad platt tabell räcker långt för analys av streamingdata  
 - SQL-tvätt och standardisering gör att datan blir mer användbar och tillförlitlig  
-- Processen skapar en tydlig pipeline från rådata → databas → Power BI  
+- Processen skapar en tydlig pipeline från rådata → databas → Power BI
+
+### Dataananalys i SQL eller Power BI
+- Genom att rensa och strukturera all data, exempelvis genom att grupperingen "Major" bestående av Spotify, Apple Music och YouTube Red är det möjligt att genomföra djupgående numerisk analys likvärdig den som senare genomfördes i Power BI med hjälp av aggregrate functions så som SUM() och DIVIDE().
+- Många av de fördelar som kan realiseras med hjälp av Power BI, så som visualisering, klickbart gränssnitt, slicers och on-the-fly filters, är anledningen till att SQL i detta projekt endast användes för initial tvätt och strukturering av data, inte djupgående analys.
 
 ---
 
