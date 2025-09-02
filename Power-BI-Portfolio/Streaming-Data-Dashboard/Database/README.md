@@ -39,10 +39,7 @@ RENAME COLUMN "Quantity" TO streams;
 **3. Korrigera datatyper**
 ```sql
 ALTER TABLE streaming_data
-ALTER COLUMN revenue_usd TYPE NUMERIC USING revenue_usd::NUMERIC;
-
-ALTER TABLE streaming_data
-ALTER COLUMN stream_date TYPE DATE USING stream_date::DATE;
+ALTER COLUMN revenue_usd TYPE NUMERIC(10,2) USING revenue_usd::NUMERIC(10,2);
 ```
 
 **4. Skapa kategorier för enklare analys**
