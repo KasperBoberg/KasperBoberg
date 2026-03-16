@@ -1,6 +1,6 @@
 # Kasper Boberg – Portfolio Repositories
 
-Hej! Tack för att du vill titta igenom min portfolio. Den gäller i fösta hand BI-lösningar med fokus på ekonomi och affärsnytta. Just nu finns ett konkret case där jag analyserat musikstreaming och intäkter med Power BI. Caset nyttjar även self-hosting via Supabase och SQL querying för att lagra, bearbeta och hämta data. Det finns även ett pågående projekt, repo 2, där Google AI Studio använts för att bygga en webbapp för att omvandla ett vanligt foto till en studiobild med hjälp av Gemini 2.5 Flash Image. Projektet är ett WIP. 
+Hej! Tack för att du vill titta igenom min repo. Här finns i fösta hand portfolioprojekt som uppvisar BI-lösningar med fokus på ekonomi och affärsnytta. Just nu finns ett konkret case där jag analyserat musikstreaming och intäkter med Power BI. Caset uppvisar även beröringspunkter längst hela datastacken, från self-hosting via Supabase till SQL querying för att lagra, rensa och hämta data. Här finns även ett prototypprojekt som låg till grund för en djupgående komparativ analys av chart-data i USA vs Europa (UK).  
 
 ---
 
