@@ -44,7 +44,14 @@ Nedan följer en kort sammanfattning över caset. Vänligen navigera till de spe
 
 ---
 
-## Projekt 2 - AI CV-Fotogenerator
+## Projekt 2 - Prototypprojekt för explorativ analys av lyssnarmönster mellan UK och US
+
+### Se projektbeskrivningen nedan:
+[Project README](least_american_song_prototype/README.md)
+
+---
+
+## Projekt 3 - AI CV-Fotogenerator
 
 Detta projekt är en webbapplikation som använder kraften från Google Gemini API för att omvandla dina vardagsfoton till professionella CV-porträtt i studiokvalitet. Användare kan ladda upp ett foto av sig själva, specificera önskad klädstil och anpassa bakgrund och belysning för att generera realistiska och polerade porträtt lämpliga för CV:n, LinkedIn-profiler och professionella webbplatser.
 
